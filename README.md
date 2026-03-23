@@ -54,8 +54,7 @@ ai-diagnostic-system/
 
 ### Install Python Dependencies
 
-```pip install -r requirements.txt
-```
+```pip install -r requirements.txt```
 
 ### Clone the Repository
 
