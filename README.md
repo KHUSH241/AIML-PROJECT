@@ -54,8 +54,7 @@ ai-diagnostic-system/
 
 ### Install Python Dependencies
 
-```bash
-pip install pyswip scikit-learn joblib matplotlib numpy
+```pip install -r requirements.txt
 ```
 
 ### Clone the Repository
