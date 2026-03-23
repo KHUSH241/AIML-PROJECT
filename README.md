@@ -106,15 +106,10 @@ Note: If `risk_classifier.pkl` is not present, the model will automatically trai
 ### 🖥️ Main Interface & Output
 
 <img width="600" height="650" alt="Screenshot 2026-03-23 at 10 25 59 PM" src="https://github.com/user-attachments/assets/391d50cc-d868-4d5f-9bac-01546522008e" />
-
 <img width="600" height="650" alt="Screenshot 2026-03-23 at 10 26 11 PM" src="https://github.com/user-attachments/assets/c40e47a0-5da3-4f32-8884-5c95377a4a40" />
-
 <img width="600" height="650" alt="Screenshot 2026-03-23 at 10 26 51 PM" src="https://github.com/user-attachments/assets/c3f19707-3fcf-49f7-a476-b9687dc79463" />
-
 <img width="600" height="650" alt="Screenshot 2026-03-23 at 10 27 11 PM" src="https://github.com/user-attachments/assets/873af9ba-ebfc-461d-b587-6106255554ad" />
-
 <img width="600" height="650" alt="Screenshot 2026-03-23 at 10 27 29 PM" src="https://github.com/user-attachments/assets/904e3c51-d355-4177-a520-2d00fc0aba45" />
-
 <img width="600" height="650" alt="Screenshot 2026-03-23 at 10 27 41 PM" src="https://github.com/user-attachments/assets/c256fa11-01af-406a-9323-69bedad330c6" />
 
 
