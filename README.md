@@ -55,12 +55,12 @@ ai-diagnostic-system/
 
 ### Install Python Dependencies
 
-```bash pip install -r requirements.txt```
+```bash
+pip install -r requirements.txt```
 
 ### Clone the Repository
 
-```
-bash
+```bash
 git clone https://github.com/YOUR_USERNAME/ai-diagnostic-system.gitcd ai-diagnostic-system```
 
 ---
