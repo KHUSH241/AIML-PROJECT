@@ -101,6 +101,12 @@ Note: If `risk_classifier.pkl` is not present, the model will automatically trai
 
 ---
 
+## 📸 Screenshots
+
+<img width="893" height="726" alt="Screenshot 2026-03-23 at 10 25 59 PM" src="https://github.com/user-attachments/assets/391d50cc-d868-4d5f-9bac-01546522008e" />
+
+---
+
 ## 🤖 How It Works
 
 ### Machine Learning (classifier_model.py)
