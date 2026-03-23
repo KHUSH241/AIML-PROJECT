@@ -63,7 +63,7 @@ pip install -r requirements.txt
 
 ```bash
 git clone https://github.com/KHUSH241/AIML-PROJECT.git
-cd ai-diagnostic-system
+cd AIML-PROJECT
 ```
 
 ---
