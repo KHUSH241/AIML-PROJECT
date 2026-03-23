@@ -152,4 +152,6 @@ MIT License — free to use, modify, and distribute.
 
 ## 👤 Author
 
-Developed as a BYOP (Bring Your Own Project) submission for the Artificial Intelligence & Machine Learning course.
+Name: Khush M Lohar
+
+
