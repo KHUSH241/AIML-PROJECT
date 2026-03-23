@@ -27,7 +27,7 @@ Fever and hypothermia are among the most common yet frequently mismanaged health
 ```
 ai-diagnostic-system/
 │
-├── main.py                  # Main GUI application (entry point)
+├── app.py                  # Main GUI application (entry point)
 ├── classifier_model.py      # ML model training and prediction
 ├── rules.pl                 # Prolog knowledge base (diagnosis + treatment rules)
 ├── symptoms_data.csv        # Training dataset
@@ -72,6 +72,8 @@ python app.py
 ```
 
 On first launch, the ML model will be trained automatically from `symptoms_data.csv` and saved as `risk_classifier.pkl`.
+
+Note: If `risk_classifier.pkl` is not present, the model will automatically train using the dataset.
 
 ---
 
