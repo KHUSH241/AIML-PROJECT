@@ -54,17 +54,17 @@ ai-diagnostic-system/
 | Windows | Download from [https://www.swi-prolog.org/download](https://www.swi-prolog.org/download) |
 
 ### Install Python Dependencies
-```markdown
+
 ```bash
 pip install -r requirements.txt
+```
 
 ### Clone the Repository
-
-```markdown
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/ai-diagnostic-system.git
 cd ai-diagnostic-system
+```
 
 ---
 
