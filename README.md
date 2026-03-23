@@ -33,6 +33,7 @@ ai-diagnostic-system/
 ├── symptoms_data.csv        # Training dataset
 ├── risk_classifier.pkl      # Trained model (auto-generated on first run)
 └── README.md
+├── requirements.txt         #requirements and library to be installed
 ```
 
 ---
@@ -115,7 +116,7 @@ Note: If `risk_classifier.pkl` is not present, the model will automatically trai
 - Matched treatment text is returned alongside the diagnosis
 - Facts are retracted and re-asserted for each query (stateless per query)
 
-### GUI (main.py)
+### GUI (app.py)
 - Dark-themed Tkinter interface
 - Matplotlib chart embedded inside the window for live temperature visualisation
 - Colour-coded result labels (green = safe, yellow = moderate, red = danger)
@@ -132,6 +133,16 @@ temperature,duration,risk
 34.0,4,High
 ...
 ```
+---
+
+## 💡 Uniqueness of the Project
+
+This system stands out by combining:
+
+* Machine Learning for probabilistic risk prediction
+* Prolog-based expert system for logical reasoning
+
+This hybrid approach mimics real-world medical decision systems by integrating data-driven and rule-based intelligence.
 
 ---
 
@@ -141,12 +152,6 @@ temperature,duration,risk
 - Upgrade to Random Forest for better accuracy
 - Deploy as a web app with Flask + React frontend
 - Add multilingual support
-
----
-
-## 📄 License
-
-MIT License — free to use, modify, and distribute.
 
 ---
 
