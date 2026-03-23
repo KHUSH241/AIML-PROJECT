@@ -32,8 +32,8 @@ ai-diagnostic-system/
 ├── rules.pl                 # Prolog knowledge base (diagnosis + treatment rules)
 ├── symptoms_data.csv        # Training dataset
 ├── risk_classifier.pkl      # Trained model (auto-generated on first run)
-└── README.md
-├── requirements.txt         #requirements and library to be installed
+├── README.md
+└── requirements.txt        #Dependancy required for project
 ```
 
 ---
@@ -55,7 +55,8 @@ ai-diagnostic-system/
 
 ### Install Python Dependencies
 
-```pip install -r requirements.txt```
+```bash
+pip install -r requirements.txt```
 
 ### Clone the Repository
 
@@ -157,6 +158,6 @@ This hybrid approach mimics real-world medical decision systems by integrating d
 
 ## 👤 Author
 
-Name: Khush M Lohar
+**Author:** Khush M Lohar
 
 
