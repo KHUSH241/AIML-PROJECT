@@ -151,8 +151,11 @@ Once the program starts, you will see a prompt:
 ---
 ## 📸 Screenshots (CLI Version)
 ![1](https://github.com/user-attachments/assets/1cb538f9-fa13-4e79-bfc3-0cf24aa8e784)
+
 ![2](https://github.com/user-attachments/assets/915efa6a-9c4a-472a-8fe6-8038c5c4f8bc)
+
 ![3](https://github.com/user-attachments/assets/498e7b83-d568-4b94-9360-efd5ec079b12)
+
 ![4](https://github.com/user-attachments/assets/82530cdd-c1b7-498b-9b4c-56bbeb484dd6)
 
 ---
