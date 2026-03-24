@@ -33,13 +33,11 @@ AIML-PROJECT/
 ├── app.py               # BONUS  — GUI version (optional)
 ├── classifier_model.py  # ML model training and prediction
 ├── rules.pl             # Prolog knowledge base (diagnosis + treatment rules)
+├── risk_classifier.pkl  # Trained model (auto-generated on first run)
 ├── symptoms_data.csv    # Training dataset (190 rows)
 ├── requirements.txt     # Python dependencies
 └── README.md
 ```
-
-> `risk_classifier.pkl` is auto-generated on first run — do not upload it to the repo.
-
 ---
 
 ## 🔧 Setup & Installation
