@@ -3,9 +3,7 @@ import sys
 from pyswip import Prolog
 from classifier_model import load_data_and_train, load_and_predict_risk
 
-# ──────────────────────────────────────────────
-#  COLOURS  (graceful fallback on Windows)
-# ──────────────────────────────────────────────
+
 class C:
     RESET  = "\033[0m"
     BOLD   = "\033[1m"
@@ -26,9 +24,6 @@ def risk_color(risk):
     if r == "medium": return C.YELLOW
     return C.GREEN
 
-# ──────────────────────────────────────────────
-#  BANNER
-# ──────────────────────────────────────────────
 def print_banner():
     print()
     print(colored("╔══════════════════════════════════════════════════╗", C.CYAN))
@@ -38,17 +33,8 @@ def print_banner():
     print(colored("╚══════════════════════════════════════════════════╝", C.CYAN))
     print()
 
-# ──────────────────────────────────────────────
-#  TEMPERATURE GAUGE  (ASCII art)
-# ──────────────────────────────────────────────
 def print_gauge(temp):
-    zones = [
-        (0,   32,  "SEVERE HYPOTHERMIA", C.RED),
-        (32,  35,  "HYPOTHERMIA",        C.CYAN),
-        (35,  37.5,"NORMAL",             C.GREEN),
-        (37.5,39,  "MILD FEVER",         C.YELLOW),
-        (39,  50,  "HIGH FEVER",         C.RED),
-    ]
+    zones = [(0,   32,  "SEVERE HYPOTHERMIA", C.RED),(32,  35,  "HYPOTHERMIA",        C.CYAN),(35,  37.5,"NORMAL",             C.GREEN),(37.5,39,  "MILD FEVER",         C.YELLOW),(39,  50,  "HIGH FEVER",         C.RED),]
 
     label = "UNKNOWN"
     col   = C.WHITE
@@ -74,15 +60,9 @@ def print_gauge(temp):
     print(f"  {'':>4} Reading: {colored(f'{temp}°C', C.BOLD + col)}  →  Zone: {colored(label, C.BOLD + col)}")
     print()
 
-# ──────────────────────────────────────────────
-#  DIVIDER
-# ──────────────────────────────────────────────
 def divider(char="─", width=52, color=C.DIM):
     print(colored(char * width, color))
 
-# ──────────────────────────────────────────────
-#  HELP
-# ──────────────────────────────────────────────
 def print_help():
     print()
     print(colored("  AVAILABLE COMMANDS", C.BOLD + C.CYAN))
@@ -98,9 +78,6 @@ def print_help():
         print(f"  {colored(cmd, C.CYAN):<20} {desc}")
     print()
 
-# ──────────────────────────────────────────────
-#  ABOUT
-# ──────────────────────────────────────────────
 def print_about():
     print()
     print(colored("  ABOUT THIS SYSTEM", C.BOLD + C.CYAN))
@@ -126,15 +103,11 @@ def print_about():
         print(f"  {line}")
     print()
 
-# ──────────────────────────────────────────────
-#  CORE DIAGNOSIS LOGIC
-# ──────────────────────────────────────────────
 def run_diagnosis(prolog, history):
     print()
     print(colored("  ── NEW DIAGNOSIS ──────────────────────────────", C.BOLD + C.CYAN))
     print()
 
-    # --- get temperature ---
     while True:
         try:
             temp_input = input(colored("  🌡  Enter Body Temperature (°C): ", C.WHITE)).strip()
@@ -148,7 +121,6 @@ def run_diagnosis(prolog, history):
         except ValueError:
             print(colored("  ✗  Invalid input. Enter a number like 38.5", C.RED))
 
-    # --- get duration ---
     while True:
         try:
             dur_input = input(colored("  ⏱  Enter Symptom Duration (days): ", C.WHITE)).strip()
@@ -165,8 +137,7 @@ def run_diagnosis(prolog, history):
     print()
     print(colored("  ⚡ Running AI Analysis...", C.DIM))
     print()
-
-    # ── ML Risk ──
+    
     if temp < 32:
         risk = "High"
     elif temp < 35:
@@ -176,7 +147,6 @@ def run_diagnosis(prolog, history):
         if isinstance(risk, str) and risk.lower().startswith("error"):
             risk = "Unknown"
 
-    # ── Prolog ──
     prolog.retractall("symptom(patient,_)")
 
     if temp >= 39:
@@ -202,10 +172,8 @@ def run_diagnosis(prolog, history):
         diagnosis  = "UNKNOWN"
         treatment  = "No rule matched. Please consult a healthcare professional."
 
-    # ── Print gauge ──
     print_gauge(temp)
 
-    # ── Print results ──
     rc = risk_color(risk)
     divider("═", 52, C.CYAN)
     print(f"  {colored('ML RISK ASSESSMENT', C.BOLD)}  :  {colored(risk.upper(), C.BOLD + rc)}")
@@ -213,7 +181,6 @@ def run_diagnosis(prolog, history):
     divider("─", 52)
     print(f"  {colored('TREATMENT ADVICE', C.BOLD + C.WHITE)}")
     print()
-    # word-wrap treatment text at ~55 chars
     words = treatment.split()
     line  = "  "
     for word in words:
@@ -227,16 +194,12 @@ def run_diagnosis(prolog, history):
     divider("═", 52, C.CYAN)
     print()
 
-    # ── Save to history ──
     history.append({
         "temp": temp, "duration": duration,
         "risk": risk, "diagnosis": diagnosis,
         "treatment": treatment
     })
 
-# ──────────────────────────────────────────────
-#  HISTORY
-# ──────────────────────────────────────────────
 def print_history(history):
     print()
     if not history:
@@ -253,11 +216,7 @@ def print_history(history):
               f"Dx: {colored(h['diagnosis'], rc)}")
     print()
 
-# ──────────────────────────────────────────────
-#  MAIN LOOP
-# ──────────────────────────────────────────────
 def main():
-    # ── setup model ──
     if not os.path.exists('risk_classifier.pkl'):
         print(colored("  ⚙  Training ML model for the first time...", C.DIM))
         ok = load_data_and_train()
@@ -266,7 +225,6 @@ def main():
             sys.exit(1)
         print(colored("  ✓  Model trained and saved.\n", C.GREEN))
 
-    # ── setup prolog ──
     try:
         prolog = Prolog()
         prolog.consult("rules.pl")
@@ -279,7 +237,6 @@ def main():
     print_banner()
     print(colored("  Type 'help' to see available commands.\n", C.DIM))
 
-    # ── command loop ──
     while True:
         try:
             cmd = input(colored("  diagnose> ", C.BOLD + C.CYAN)).strip().lower()
